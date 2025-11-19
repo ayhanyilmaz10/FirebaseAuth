@@ -1,35 +1,16 @@
 # FireTasks - Görev Yönetim Uygulaması
 
-## Firebase Kurulumu
+## Firebase Database ve Firebase Authentication kullanılarak geliştirilmiş basit bir görev yönetim uygulaması
 
-1. [Firebase Console](https://console.firebase.google.com/) üzerinden yeni bir proje oluşturun
-2. Authentication > Sign-in method > Email/Password'u etkinleştirin
-3. Firestore Database oluşturun (test modunda başlayabilirsiniz)
-4. Project Settings > General > Your apps > Web app ekleyin
-5. Firebase config bilgilerini `config/firebase.ts` dosyasına yapıştırın
+## 📸 Görseller
+![1](https://github.com/user-attachments/assets/d9e32924-3a7b-4ab4-abf0-0b3b2add49f5)
+![2](https://github.com/user-attachments/assets/06284f3b-ce95-44ed-a6b4-784644774e73)
+![3](https://github.com/user-attachments/assets/8635b8e7-8562-4c77-81ac-715d14b363e6)
 
-## Firestore Güvenlik Kuralları
 
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{userId}/tasks/{taskId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-  }
-}
-```
 
-## Çalıştırma
 
-```bash
-npm start
-# veya
-expo start
-```
-
-## Özellikler
+## 🛠 Teknolojiler
 
 - ✅ Firebase Authentication (Email/Password)
 - ✅ Firestore Database ile görev yönetimi
